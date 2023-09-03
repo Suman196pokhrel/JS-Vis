@@ -11,16 +11,16 @@ const root = document.getElementById("root")
 
 
 function init() {
-    let width = window.innerWidth
-    let height = window.innerHeight
+    let rootWidth = root.offsetWidth;
+    let rootHeight = root.offsetHeight;
 
-    let boxHeight = 20
-    let boxWidth = 20
+    let boxHeight = 12;
+    let boxWidth = 12;
 
-    let rows = Math.ceil(height / boxHeight)
-    let cols = Math.ceil(width / boxWidth)
+    let rows = Math.ceil(rootHeight / boxHeight);
+    let cols = Math.ceil(rootWidth / boxWidth);
 
-    generateGrid(root, rows, cols)
+    generateGrid(root, rows, cols, boxWidth, boxHeight);
 }
 
 
