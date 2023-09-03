@@ -12,39 +12,50 @@ body {
 
   .nav{
     width: 100%;
-    background-color: rgba(255, 0, 0, 0.264);
+    background-color: rgb(48, 145, 255);
+    color: white;
   }
 
 
   #root{
-    padding: 10px;
     margin-top: 20vh;
-    padding: 20px;
     border: 2px solid rgb(228, 228, 228);
     position: relative;
-    overflow: hidden;
-    width: 1209px;
+    width: 1225px;
     height: 600px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* background-color: red; */
     
   }
 
 
   .box{
     position: absolute;
-    border: 2px solid rgb(182, 182, 182);
+    border: 1px solid rgb(114, 161, 255);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     background-color: white;
-    transition: border 0.2s;
+    transform: scale(0);
+    transition: transform 0.2s; /* Adjust the duration as needed */
 
   }
 
   .box:hover{
-    border: 2px solid rgb(55, 55, 55);
+    /* border: 2px solid rgb(55, 55, 55); */
+    background-color: black;
+    cursor:pointer;
 
   }
+
+
+.box-animate {
+    transform: scale(1);
+}
+
 
 
   

@@ -14,14 +14,19 @@ function init() {
     let rootWidth = root.offsetWidth;
     let rootHeight = root.offsetHeight;
 
-    let boxHeight = 12;
-    let boxWidth = 12;
+    let boxHeight = 25;
+    let boxWidth = 25;
 
-    let rows = Math.ceil(rootHeight / boxHeight);
-    let cols = Math.ceil(rootWidth / boxWidth);
+    let m = 0;
+    let boxSizeWithMarginWidth = boxWidth + (2 * m);
+    let boxSizeWithMarginHeight = boxHeight + (2 * m);
+
+    let rows = Math.floor(rootHeight / boxSizeWithMarginHeight);
+    let cols = Math.floor(rootWidth / boxSizeWithMarginWidth);
 
     generateGrid(root, rows, cols, boxWidth, boxHeight);
 }
+
 
 
 
@@ -31,14 +36,6 @@ window.addEventListener('load', () => {
     init()
 })
 
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        root.innerHTML = ''
-        init()
-    }, 500)
-
-})
 
 
 

@@ -1,6 +1,6 @@
 
 export function generateBox(rowId, colId, boxWidth, boxHeight) {
-    let m = 2
+    let m = 0
     let boxSieWidthMarrgin = boxWidth + (2 * m)
 
 
@@ -15,6 +15,17 @@ export function generateBox(rowId, colId, boxWidth, boxHeight) {
 }
 
 
+
+function animateBoxes(box, i, j) {
+    setTimeout(() => {
+        requestAnimationFrame(() => {
+            box.classList.add('box-animate');
+            console.log(`animated = >${i} , ${j}`)
+
+        })
+    }, 150)
+}
+
 export function generateGrid(root, rows, cols, boxWidth, boxHeight) {
     const fragment = document.createDocumentFragment();
 
@@ -24,6 +35,7 @@ export function generateGrid(root, rows, cols, boxWidth, boxHeight) {
             const box = generateBox(i, j, boxWidth, boxHeight);
             fragment.appendChild(box);
 
+            animateBoxes(box, i, j)
 
 
 
